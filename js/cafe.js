@@ -305,7 +305,7 @@
           onCallback && onCallback(result);
         },
         error: function(xhr) {
-          onCallback && onCallback({error: Cafe.apiUrl});
+          onCallback && onCallback({error: 'Server error'});
         }
       });
     }
