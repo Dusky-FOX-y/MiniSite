@@ -293,7 +293,8 @@
       $('.js-status').removeClass('shown');
     },
     apiRequest: function(method, data, onCallback) {
-      window.Telegram.WebApp.sendData(data)
+      window.Telegram.WebApp.sendData(data);
+      Telegram.WebApp.close();
       // var authData = Telegram.WebApp.initDataRaw || '';
       // $.ajax(Cafe.apiUrl, {
       //   type: 'POST',
