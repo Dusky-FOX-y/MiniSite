@@ -265,14 +265,10 @@
           params.user_hash = Cafe.userHash;
         }
         Cafe.toggleLoading(true);
-        Cafe.apiRequest('makeOrder', params, function(result) {
+        Cafe.apiRequest('makeOrder', params, function() {
           Cafe.toggleLoading(false);
-          if (result.ok) {
             Telegram.WebApp.close();
-          }
-          if (result.error) {
-            Cafe.showStatus(result.error);
-          }
+
         });
       } else {
         Cafe.toggleMode(true);
@@ -294,7 +290,7 @@
     },
     apiRequest: function(method, data, onCallback) {
       window.Telegram.WebApp.sendData(data);
-      Telegram.WebApp.close();
+      onCallback();
       // var authData = Telegram.WebApp.initDataRaw || '';
       // $.ajax(Cafe.apiUrl, {
       //   type: 'POST',
