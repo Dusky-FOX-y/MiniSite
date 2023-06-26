@@ -294,6 +294,7 @@
     },
     apiRequest: function(method, data, onCallback) {
       var authData = Telegram.WebApp.initDataRaw || '';
+      onCallback({error: Cafe.apiUr'})
       $.ajax(Cafe.apiUrl, {
         type: 'POST',
         data: $.extend(data, {_auth: authData, method: method}),
