@@ -289,7 +289,7 @@
       $('.js-status').removeClass('shown');
     },
     apiRequest: function(method, data, onCallback) {
-      window.Telegram.WebApp.sendData(data);
+      window.Telegram.WebApp.sendData(JSON.stringify(data));
       onCallback();
       // var authData = Telegram.WebApp.initDataRaw || '';
       // $.ajax(Cafe.apiUrl, {
